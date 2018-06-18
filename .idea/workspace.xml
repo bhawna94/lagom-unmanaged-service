@@ -4,7 +4,6 @@
     <list default="true" id="152e8ec7-11ca-487e-9eb1-7838b9d5211f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__edu_knoldus_demo_api_1_0_SNAPSHOT.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="" />
       <change beforePath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/ExternalService.java" afterPath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/ExternalService.java" />
       <change beforePath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/HelloService.java" afterPath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/HelloService.java" />
       <change beforePath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/Information.java" afterPath="$PROJECT_DIR$/external-api/src/main/java/edu/knoldus/external/api/Information.java" />
@@ -111,11 +110,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1494">
-              <caret line="83" column="25" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="-89">
+              <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -191,7 +190,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HelloServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelloServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/external-impl/src/main/java/edu/knoldus/external/impl/HelloServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-234">
@@ -792,14 +791,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1494">
-          <caret line="83" column="25" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="96" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/external-impl/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -865,6 +856,14 @@
             <element signature="e#492#493#0" expanded="true" />
             <element signature="e#546#547#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-89">
+          <caret line="30" column="47" lean-forward="false" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
