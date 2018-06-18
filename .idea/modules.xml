@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/external-api/external-api.iml" filepath="$PROJECT_DIR$/external-api/external-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external-impl/external-impl.iml" filepath="$PROJECT_DIR$/external-impl/external-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external-service.iml" filepath="$PROJECT_DIR$/external-service.iml" />
+    </modules>
+  </component>
+</project>
