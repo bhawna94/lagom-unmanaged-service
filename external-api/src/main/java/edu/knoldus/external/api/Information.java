@@ -1,5 +1,6 @@
 package edu.knoldus.external.api;
 
+import lombok.Builder;
 import lombok.Value;
 
 @Value

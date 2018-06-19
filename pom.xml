@@ -30,6 +30,9 @@
                         <external-service>
                             https://jsonplaceholder.typicode.com
                         </external-service>
+                        <cas_native>
+                            http://127.0.0.1:9042
+                        </cas_native>
                     </unmanagedServices>
                 </configuration>
             </plugin>
