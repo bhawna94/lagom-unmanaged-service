@@ -35,12 +35,7 @@ public class HelloServiceImpl implements HelloService {
 
         return request -> cassandraSession.executeWrite("insert into user.external (user_id, id, title, body) values(?,?,?,?)",
                 info.getUserId(),info.getId(),info.getTitle(),info.getBody()).thenApply(NotUsed-> "inserted");
-//        return request -> cassandraSession.executeWrite(Operation.addUser(),info.thenApply(row->{
-//            row.getUserId(),
-//            row.getBody();
-//            row.getTitle();
-//            row.getId();
-//        }));
+
 
     }
 

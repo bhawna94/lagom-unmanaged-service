@@ -9,7 +9,7 @@ import static com.lightbend.lagom.javadsl.api.Service.named;
 import static com.lightbend.lagom.javadsl.api.transport.Method.GET;
 import static com.lightbend.lagom.javadsl.api.transport.Method.POST;
 
-public interface HelloService extends Service {
+public interface    HelloService extends Service {
 
     ServiceCall<NotUsed, Information> getInformation();
 
@@ -23,7 +23,7 @@ public interface HelloService extends Service {
         return named("hello").withCalls(
                 Service.restCall(GET, "/api/get", this::getInformation),
                 Service.restCall(GET, "/api/getTitle", this::getUserTitle),
-                Service.restCall(POST,"api/addUser",this::postInformation)
+                Service.restCall(POST,"/api/addUser",this::postInformation)
         ).withAutoAcl(true);
     }
 }
