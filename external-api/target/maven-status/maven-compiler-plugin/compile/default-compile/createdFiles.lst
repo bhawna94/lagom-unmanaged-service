@@ -1,3 +1,4 @@
 edu/knoldus/external/api/ExternalService.class
-edu/knoldus/external/api/Information.class
+edu/knoldus/external/api/Information$InformationBuilder.class
 edu/knoldus/external/api/HelloService.class
+edu/knoldus/external/api/Information.class

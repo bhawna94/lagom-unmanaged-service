@@ -14,29 +14,17 @@ import java.util.concurrent.CompletionStage;
 public class HelloServiceImpl implements HelloService {
 
     private final ExternalService externalService;
-    private final CassandraSession cassandraSession;
-    private Information info;
+    private static Information info;
 
     @Inject
-    public HelloServiceImpl(ExternalService externalService, CassandraSession cassandraSession) {
+    public HelloServiceImpl(ExternalService externalService) {
         this.externalService = externalService;
-        this.cassandraSession = cassandraSession;
     }
 
     @Override
     public ServiceCall<NotUsed, Information> getInformation() {
         info = externalService.getUser().invoke().thenApply(row -> row).toCompletableFuture().join();
         return request -> CompletableFuture.completedFuture(info);
-    }
-
-    @Override
-    public ServiceCall<NotUsed, String> postInformation() {
-        info = externalService.getUser().invoke().thenApply(row -> row).toCompletableFuture().join();
-
-        return request -> cassandraSession.executeWrite("insert into user.external (user_id, id, title, body) values(?,?,?,?)",
-                info.getUserId(),info.getId(),info.getTitle(),info.getBody()).thenApply(NotUsed-> "inserted");
-
-
     }
 
     @Override
