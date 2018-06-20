@@ -11,19 +11,17 @@ import static com.lightbend.lagom.javadsl.api.transport.Method.POST;
 
 public interface    HelloService extends Service {
 
-    ServiceCall<NotUsed, Information> getInformation();
+    ServiceCall<NotUsed, Information> getInformation(int id);
 
-    ServiceCall<NotUsed, String> getUserTitle();
+    //ServiceCall<NotUsed, String> getUserTitle();
 
-    ServiceCall <NotUsed, String> postInformation();
+   // ServiceCall <NotUsed, String> postInformation();
 
 
     @Override
     default Descriptor descriptor() {
         return named("hello").withCalls(
-                Service.restCall(GET, "/api/get", this::getInformation),
-                Service.restCall(GET, "/api/getTitle", this::getUserTitle),
-                Service.restCall(POST,"/api/addUser",this::postInformation)
+                Service.restCall(GET, "/api/get/:id", this::getInformation)
         ).withAutoAcl(true);
     }
 }

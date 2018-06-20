@@ -24,23 +24,12 @@ public class HelloServiceImpl implements HelloService {
     }
 
     @Override
-    public ServiceCall<NotUsed, Information> getInformation() {
-        info = externalService.getUser().invoke().thenApply(row -> row).toCompletableFuture().join();
+    public ServiceCall<NotUsed, Information> getInformation(int id) {
+        info = externalService.getUser(id).invoke().thenApply(row -> row).toCompletableFuture().join();
         return request -> CompletableFuture.completedFuture(info);
     }
 
-    @Override
-    public ServiceCall<NotUsed, String> postInformation() {
-        info = externalService.getUser().invoke().thenApply(row -> row).toCompletableFuture().join();
-
-        return request -> cassandraSession.executeWrite("insert into user.external (user_id, id, title, body) values(?,?,?,?)",
-                info.getUserId(),info.getId(),info.getTitle(),info.getBody()).thenApply(NotUsed-> "inserted");
 
 
-    }
 
-    @Override
-    public ServiceCall<NotUsed, String> getUserTitle() {
-        return request -> externalService.getUser().invoke().thenApply(Information::getTitle);
-    }
 }
