@@ -1,3 +1,9 @@
-edu/knoldus/external/api/ExternalService.class
+edu/knoldus/external/api/ExternalServiceExceptionSerializer.class
 edu/knoldus/external/api/Information.class
+edu/knoldus/external/api/ExceptionFactory.class
+edu/knoldus/external/api/ExceptionFactory$AuthenticationException.class
+edu/knoldus/external/api/Error$ErrorBuilder.class
+edu/knoldus/external/api/ExternalService.class
+edu/knoldus/external/api/Error.class
 edu/knoldus/external/api/HelloService.class
+edu/knoldus/external/api/ExceptionFactory$GenericException.class

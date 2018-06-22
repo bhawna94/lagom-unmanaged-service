@@ -15,8 +15,9 @@ public interface ExternalService extends Service {
     @Override
     default Descriptor descriptor() {
         return named("external-service").withCalls(
-                Service.restCall(GET, "/posts/1", this::getUser)
-        ).withAutoAcl(true);
+                Service.restCall(GET, "/user", this::getUser)
+        ).withExceptionSerializer(ExternalServiceExceptionSerializer.INSTANCE)
+                .withAutoAcl(true);
 
     }
 }

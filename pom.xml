@@ -27,12 +27,7 @@
                 <version>${lagom.version}</version>
                 <configuration>
                     <unmanagedServices>
-                        <external-service>
-                            https://jsonplaceholder.typicode.com
-                        </external-service>
-                        <cas_native>
-                            http://127.0.0.1:9042
-                        </cas_native>
+                        <external-service>https://api.github.com</external-service>
                     </unmanagedServices>
                 </configuration>
             </plugin>
