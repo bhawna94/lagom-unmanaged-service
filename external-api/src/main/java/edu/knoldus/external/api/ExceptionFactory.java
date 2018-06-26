@@ -14,9 +14,9 @@ public class ExceptionFactory {
 
     private static Throwable determineException(Error error) {
 
-        String errorMessage = error.getErrorMessage();
+        String errorMessage = error.getMessage();
         if (StringUtils.isNotEmpty(errorMessage) && errorMessage.contains("Requires authentication")) {
-
+            System.out.println("\n............bhawna......\n");
             return new AuthenticationException(error);
         }
         return new GenericException(error);
@@ -29,6 +29,7 @@ public class ExceptionFactory {
 
         public AuthenticationException(Error error) {
             this.error = error;
+            System.out.println("\n\n erroe is.... "+this.error+"\n\n\n");
         }
     }
 

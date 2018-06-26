@@ -20,6 +20,7 @@ public class ExternalServiceExceptionSerializer implements ExceptionSerializer {
 
     @Override
     public Throwable deserialize(RawExceptionMessage message) {
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>");
         return ExceptionFactory.getInstance(mapExceptionToError(message));
     }
 
@@ -27,10 +28,13 @@ public class ExternalServiceExceptionSerializer implements ExceptionSerializer {
         Error error;
         try {
             String errorJson = message.messageAsText();
+            System.out.println("\n...................fhehjkjakjakk................" + errorJson +"\n");
             error = MAPPER.readValue(errorJson, Error.class);
         } catch (IOException exception) {
-            error = Error.builder().errorMessage("null").build();
+            error = Error.builder().message("null").build();
         }
+        System.out.println("\n......dgdfgfgdgdg........\n" +error);
+        System.out.println("\n");
         return error;
     }
 }

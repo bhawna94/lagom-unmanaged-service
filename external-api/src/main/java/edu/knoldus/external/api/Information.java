@@ -7,8 +7,6 @@ import lombok.Value;
 @Value
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
-
-
 public class Information {
     int userId;
     int id;

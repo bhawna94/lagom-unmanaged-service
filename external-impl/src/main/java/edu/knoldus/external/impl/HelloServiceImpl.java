@@ -1,10 +1,10 @@
 package edu.knoldus.external.impl;
 
 import akka.NotUsed;
-import com.lightbend.lagom.javadsl.api.transport.TransportException;
 import com.lightbend.lagom.javadsl.api.ServiceCall;
 import com.lightbend.lagom.javadsl.api.deser.ExceptionMessage;
 import com.lightbend.lagom.javadsl.api.transport.TransportErrorCode;
+import com.lightbend.lagom.javadsl.api.transport.TransportException;
 import com.lightbend.lagom.javadsl.persistence.cassandra.CassandraSession;
 import edu.knoldus.external.api.ExceptionFactory;
 import edu.knoldus.external.api.ExternalService;
@@ -13,7 +13,6 @@ import edu.knoldus.external.api.Information;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 
 public class HelloServiceImpl implements HelloService {
 
@@ -29,17 +28,21 @@ public class HelloServiceImpl implements HelloService {
 
     @Override
     public ServiceCall<NotUsed, Information> getInformation() {
-        info = externalService.getUser().invoke().thenApply(row -> row).toCompletableFuture().join();
-        System.out.println("....................hi.......................");
-        return request -> CompletableFuture.completedFuture(info).exceptionally(throwable -> {
+        return req-> externalService.getUser().invoke().thenApply(row -> row).exceptionally(throwable -> {
+            System.out.println("hahahahah");
             Throwable cause = throwable.getCause();
-
-            if (cause instanceof ExceptionFactory.AuthenticationException)
+            System.out.println("\n\n cause is " + cause + "\n\n");
+            if (cause instanceof ExceptionFactory.AuthenticationException) {
+                System.out.println("hiiiiiiiiiiiiiiiiiii");
                 throw new TransportException(TransportErrorCode.InternalServerError,
-                        new ExceptionMessage("AuthenticationException","Authentication is required."));
+                        new ExceptionMessage("AuthenticationException", "Authentication is required."));
+            }
+
             throw new TransportException(TransportErrorCode.InternalServerError,
-                    new ExceptionMessage("error",cause.getMessage()));
+                    new ExceptionMessage("error", cause.getMessage()));
         });
+
+
     }
 
 
